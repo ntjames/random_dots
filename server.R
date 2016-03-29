@@ -3,14 +3,13 @@ library(shiny)
 
 shinyServer(function(input, output) {
   
-  
   rand.seed<-reactive({set.seed(input$seed)})
     
   mydist <- reactive({
     dist <- switch(input$dist,
-                   norm = rnorm,
-                   exp = rexp,
-                   unif=runif,
+                   Normal = rnorm,
+                   Exponential = rexp,
+                   Uniform = runif,
                    rnorm)    
     dist(input$integer)
   })
@@ -33,14 +32,9 @@ shinyServer(function(input, output) {
   
   }) 
   
-  
-  
-  # Generate a plot of the requested variable against mpg and only 
-  # include outliers if requested
   output$myplot <- renderPlot({      
     sliderValues()
-  })
-  
+  }) 
   
 })
 
