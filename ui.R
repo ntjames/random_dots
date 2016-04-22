@@ -1,18 +1,18 @@
 library(shiny)
 
-# Define UI for miles per gallon application
+# Define UI
 shinyUI(fluidPage(
   
   # Application title
   headerPanel("Plot Random Dots"),
   
   sidebarPanel(
-    sliderInput("integer","n:",min=100,max=50000,value=500),
+    sliderInput("integer","How many dots?",min=100,max=50000,value=500),
     
     selectInput("dist", "Choose a distribution:", 
-                choices = c("Normal", "Exponential","Uniform")),
+                choices = c("Normal", "Exponential","Uniform"))
     
-    numericInput("seed", "random seed:", 10)
+    #,numericInput("seed", "random seed:", 10)
     ),
   
   mainPanel(    
