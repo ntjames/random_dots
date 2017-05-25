@@ -9,6 +9,9 @@ shinyServer(function(input, output) {
                    Normal = rnorm,
                    Exponential = rexp,
                    Uniform = runif,
+                   Cauchy = rcauchy,
+                   Logistic = rlogis,
+                   Lognormal = rlnorm, 
                    rnorm)    
     dist(input$integer)
   })
